@@ -14,7 +14,7 @@
 extern	void	tkfreetop(Heap*, int);
 Type*	fakeTkTop;
 static	uchar	TktypeMap[] = Tk_Toplevel_map;
-int	tkstylus;
+extern int	tkstylus;
 void	(*tkwiretap)(void*, char*, char*, void*, Rectangle*);
 
 static void tktopimagedptr(TkTop*, Draw_Image*);

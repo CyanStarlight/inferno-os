@@ -54,7 +54,7 @@ static struct Cmd cmdmain[] =
 	"winfo",	tkwinfo,
 };
 
-char*	tkfont;
+extern char*	tkfont;
 
 /*
  * auto-repeating support
@@ -1598,8 +1598,9 @@ tkdirty(Tk *tk)
 }
 
 static int
-qcmdcmp(const void *a, const void *b)
+qcmdcmp(void *a, void *b)
 {
+	/* match project qsort prototype: int (*)(void*, void*) */
 	return strcmp(((TkCmdtab*)a)->name, ((TkCmdtab*)b)->name);
 }
 

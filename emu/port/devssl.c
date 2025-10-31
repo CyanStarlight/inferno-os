@@ -8,6 +8,11 @@
 #include	"mp.h"
 #include	"libsec.h"
 
+/* nrand is declared in portfns.h (os/port/portfns.h); provide a local
+ * declaration here to avoid implicit-declaration errors when building the
+ * emulator port. */
+int nrand(int);
+
 typedef struct OneWay OneWay;
 struct OneWay
 {

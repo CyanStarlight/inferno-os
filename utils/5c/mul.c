@@ -606,4 +606,7 @@ Hintab	hintab[] =
 	62750,	"e+f--+g+",
 	64750,	"b+f+d+p-",
 };
-int	hintabsize	= nelem(hintab);
+/* hintabsize is defined in list.c by defining EXTERN before including gc.h.
+ * Do not define it here to avoid multiple-definition linker errors when
+ * mul.c and list.c are linked into the same binary.
+ */

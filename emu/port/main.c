@@ -25,6 +25,7 @@ extern	int	mflag;
 	int	xtblbit;
 	ulong	displaychan;
 char *cputype;
+void (*coherence)(void) = nofence;
 
 static void
 usage(void)

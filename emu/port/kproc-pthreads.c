@@ -1,8 +1,10 @@
+#define _GNU_SOURCE
+
 #include	"dat.h"
 #include	"fns.h"
 #include	"error.h"
 
-#undef _POSIX_C_SOURCE 
+#undef _POSIX_C_SOURCE
 #undef getwd
 
 #include	<unistd.h>
@@ -11,6 +13,16 @@
 #include	<limits.h>
 #include	<errno.h>
 #include	<semaphore.h>
+#include	<sched.h>
+
+/* map pthread_yield to sched_yield if pthread_yield isn't available */
+#ifndef pthread_yield
+#define pthread_yield() sched_yield()
+#endif
+
+/* Ensure prototype for pthread_getattr_np is available even if feature test
+ * macros differ; this is a GNU extension used only for debugging above. */
+int pthread_getattr_np(pthread_t, pthread_attr_t *);
 
 #ifdef __NetBSD__
 #include	<sched.h>
