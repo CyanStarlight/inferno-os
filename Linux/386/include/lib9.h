@@ -222,9 +222,8 @@ extern	int	errfmt(Fmt *f);
 extern	char	*unquotestrdup(char*);
 extern	Rune	*unquoterunestrdup(Rune*);
 extern	char	*quotestrdup(char*);
-#define	qsort	infqsort
-/* infqsort comparator uses (void*, void*) across the tree */
-extern	void	infqsort(void*, long, long, int (*)(void*, void*));
+/* infqsort comparator uses (const void*, const void*) across the tree */
+extern	void	infqsort(void*, long, long, int (*)(const void*, const void*));
 #define	qsort	infqsort
 extern	int	quotestrfmt(Fmt*);
 extern	int	quoterunestrfmt(Fmt*);
