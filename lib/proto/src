@@ -15,9 +15,6 @@ emu
 		*
 	Plan9
 		asm-386.s
-		asm-mips.s
-		asm-power.s
-		asm-sparc.s
 		cmd.c
 		devfs.c
 		devsrv9.c
@@ -90,10 +87,6 @@ libdynld
 	dynld-386.c
 	dynld-68000.c
 	dynld-arm.c
-	dynld-mips.c
-	dynld-power.c
-	dynld-sparc.c
-	dynld-spim.c
 	dynld.c
 	dynloadfd.c
 	mkfile
@@ -356,21 +349,21 @@ libinterp
 	comp-386.c
 	comp-68020.c
 	comp-arm.c
-	comp-mips.c
-	comp-power.c
-	comp-s800.c
-	comp-sparc.c
-	comp-spim.c
+	# comp-mips.c arch-specific (moved to archived/arch/mips)
+	# comp-power.c arch-specific (moved to archived/arch/power)
+	# comp-s800.c arch-specific (moved to archived/arch/s800)
+	# comp-sparc.c arch-specific (moved to archived/arch/sparc)
+	# comp-spim.c arch-specific (moved to archived/arch/spim)
 	comp-thumb.c
 	conv.c
 	das-386.c
 	das-68000.c
 	das-68020.c
 	das-arm.c
-	das-mips.c
-	das-power.c
-	das-s800.c
-	das-sparc.c
+	# das-mips.c arch-specific (moved to archived/arch/mips)
+	# das-power.c arch-specific (moved to archived/arch/power)
+	# das-s800.c arch-specific (moved to archived/arch/s800)
+	# das-sparc.c arch-specific (moved to archived/arch/sparc)
 	das-stub.c
 	das-spim.c
 	das-thumb.c
