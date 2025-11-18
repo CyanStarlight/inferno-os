@@ -1,5 +1,0 @@
-
-## AIX support removed from inferno-modern
-# This mkhost file intentionally refuses to configure AIX builds.
-echo "AIX support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
-false

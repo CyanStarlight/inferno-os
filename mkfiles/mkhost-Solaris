@@ -1,5 +1,0 @@
-
-## Solaris support removed from inferno-modern
-# This mkhost file intentionally refuses to configure Solaris builds.
-echo "Solaris support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
-false
