@@ -1,14 +1,5 @@
 
-#	Variables for host system type = AIX
-
-SHELLTYPE=	sh
-SHELLNAME=	/bin/sh
-HOSTMODEL=	Posix
-OSTARG=		os
-
-DATA2S=		data2s
-NDATE=		ndate
-KSIZE=		ksize
-AWK=		awk
-
-MKAR=		archive-$SYSTARG
+## AIX support removed from inferno-modern
+# This mkhost file intentionally refuses to configure AIX builds.
+echo "AIX support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
+false

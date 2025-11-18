@@ -1,12 +1,5 @@
 
-#	Variables for host system type = Irix
-
-SHELLTYPE=	sh
-SHELLNAME=	/bin/sh
-HOSTMODEL=	Posix
-OSTARG=		os
-
-DATA2S=		data2s
-NDATE=		ndate
-KSIZE=		ksize
-AWK=		awk
+## Irix support removed from inferno-modern
+# This mkhost file intentionally refuses to configure Irix builds.
+echo "Irix support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
+false

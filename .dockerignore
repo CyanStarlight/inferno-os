@@ -65,7 +65,4 @@ power/*
 spim/*
 MacOSX/*
 Nt/*
-Dragonfly/*
 FreeBSD/*
-NetBSD/*
-OpenBSD/*

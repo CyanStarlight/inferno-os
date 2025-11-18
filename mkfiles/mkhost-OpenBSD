@@ -1,15 +1,9 @@
 
-#	Variables for host system type = OpenBSD
+## OpenBSD support removed from inferno-modern
+echo "OpenBSD support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
+false
 
-SHELLTYPE=	sh
-SHELLNAME=	/bin/sh
-HOSTMODEL=	Posix
-OSTARG=		os
-
-DATA2S=		data2s
-NDATE=		ndate
-KSIZE=		ksize
-AWK=		awk
+## OpenBSD support removed
 CP=	cp
 ECHO=	echo
 FALSE=	false

@@ -1,15 +1,8 @@
 
-#	Variables for host system type = Unixware
-
-SHELLTYPE=	sh
-SHELLNAME=	/bin/sh
-HOSTMODEL=	Posix
-OSTARG=	os
-
-DATA2S=	data2s
-NDATE=		ndate
-KSIZE=		ksize
-AWK=		awk
+## DragonFly support removed from inferno-modern
+# This mkhost file intentionally refuses to configure DragonFly builds.
+echo "DragonFly support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
+false
 CP=	cp
 ECHO=	echo
 FALSE=	false

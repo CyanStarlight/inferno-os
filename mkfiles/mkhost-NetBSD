@@ -1,15 +1,9 @@
 
-#	Variables for host system type = NetBSD
+## NetBSD support removed from inferno-modern
+echo "NetBSD support removed for inferno-modern; set SYSHOST to one of: Linux, MacOSX, Nt, FreeBSD" >&2
+false
 
-SHELLTYPE=	sh
-SHELLNAME=	/bin/sh
-HOSTMODEL=	Posix
-OSTARG=		os
-
-DATA2S=		data2s
-NDATE=		date +'%s'
-KSIZE=		ksize
-AWK=		awk
+## NetBSD support removed
 CP=	cp
 ECHO=	echo
 FALSE=	false

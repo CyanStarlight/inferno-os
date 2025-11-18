@@ -1,3 +1,6 @@
+20251118
+	Project policy change: Prepare to drop support in the inferno-modern mainline for legacy platforms AIX, Irix, Solaris, DragonFly, NetBSD and OpenBSD.
+	Keep support for Linux, MacOSX, Nt (Windows) and FreeBSD as the single BSD platform.
 20140525
 	implement & in replacement text in sed
 20140524
