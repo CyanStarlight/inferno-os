@@ -65,7 +65,6 @@ appl/acme/acme/bin/
 
 # library output dirs for built platforms
 /Linux/*/lib/
-/NetBSD/*/lib/
 
 
 # Editors

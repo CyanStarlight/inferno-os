@@ -37,14 +37,11 @@ lib9
 	fprint.c
 	getcallerpc-FreeBSD-386.S
 	getcallerpc-Hp-s800.s
-	getcallerpc-Irix-mips.s
 	getcallerpc-Linux-386.S
 	getcallerpc-Linux-arm.S
 	getcallerpc-Linux-spim.S
 	getcallerpc-MacOSX-power.s
 	getcallerpc-MacOSX-386.s
-	getcallerpc-Solaris-386.s
-	getcallerpc-Solaris-sparc.s
 	getcallerpc-Unixware-386.s
 	getfields.c
 	getuser-Nt.c
@@ -53,11 +50,8 @@ lib9
 	getwd-posix.c
 	lock.c
 	lock-Hp-s800.s
-	lock-Irix-mips.s
 	lock-MacOSX-power.s
 	lock-Nt-386.c
-	lock-Solaris-386.s
-	lock-Solaris-sparc.s
 	lock-Unixware-386.s
 	mkfile
 	mkfile-Nt

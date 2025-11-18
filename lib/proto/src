@@ -527,14 +527,14 @@ libmemlayer
 	mkfile-FreeBSD
 	mkfile-Hp
 	mkfile-Inferno
-	mkfile-Irix
+	/* mkfile-Irix removed */
 	mkfile-Linux
 	mkfile-MacOSX
 	/* mkfile-NetBSD removed */
 	mkfile-Nt
 	mkfile-Plan9
 	mkfile-Posix
-	mkfile-Solaris
+	/* mkfile-Solaris removed */
 	mkfile-Unixware
 	mkfile-os
 	unload.c

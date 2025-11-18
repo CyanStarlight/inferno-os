@@ -154,17 +154,17 @@ Inferno-arm-% inferno-arm-%:V:
 Plan9-% plan9-%:V:
 	mk 'SYSHOST=Plan9' 'OBJTYPE=386' $stem
 
-/* Irix support removed for inferno-modern */
+/* Irix support removed */
 
 Linux-% linux-%:V:
 	mk 'SYSHOST=Linux' 'OBJTYPE=386' $stem
 
-/* NetBSD support removed for inferno-modern; keep FreeBSD only */
+/* NetBSD support removed; FreeBSD is retained */
 
 Nt-% nt-% Win95-% win95-%:V:
 	mk 'SYSHOST=Nt' 'OBJTYPE=386' $stem
 
-/* Solaris support removed for inferno-modern */
+/* Solaris support removed */
 
 mkdirs:V:	mkdirs-$SHELLTYPE
 
