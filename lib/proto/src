@@ -30,15 +30,11 @@ emu
 		+
 	Hp
 		+
-	/* Irix support removed */
-		+
 	Linux
 		+
 	MacOSX
 		+
 	Nt
-		+
-	/* Solaris support removed */
 		+
 	Unixware
 		+
@@ -452,12 +448,10 @@ libmath
 	FPcontrol-FreeBSD.c
 	FPcontrol-Hp.c
 	FPcontrol-Inferno.c
-	/* FPcontrol-Irix.c removed */
 	FPcontrol-Linux.c
 	FPcontrol-MacOSX.c
 	FPcontrol-Nt.c
 	FPcontrol-Plan9.c
-	/* FPcontrol-Solaris.c removed */
 	FPcontrol-Unixware.c
 	bin
 		fdlibm-stubs
@@ -493,12 +487,10 @@ libmemdraw
 	load.c
 	mkfile
 	mkfile-Inferno
-	/* mkfile-Irix removed */
 	mkfile-Linux
 	mkfile-MacOSX
 	mkfile-Nt
 	mkfile-Plan9
-	/* mkfile-Solaris removed */
 	mkfile-FreeBSD
 	mkfile-os
 	openmemsubfont.c
@@ -527,14 +519,11 @@ libmemlayer
 	mkfile-FreeBSD
 	mkfile-Hp
 	mkfile-Inferno
-	/* mkfile-Irix removed */
 	mkfile-Linux
 	mkfile-MacOSX
-	/* mkfile-NetBSD removed */
 	mkfile-Nt
 	mkfile-Plan9
 	mkfile-Posix
-	/* mkfile-Solaris removed */
 	mkfile-Unixware
 	mkfile-os
 	unload.c
@@ -805,17 +794,14 @@ tools
 		mkfile-MacOSX
 		mkfile-Nt
 		mkfile-Plan9
-		/* mkfile-Solaris removed */
 		odbc.c
 	styxtest
 		mkfile
 		mkfile-FreeBSD
-		/* mkfile-Irix removed */
 		mkfile-Linux
 		mkfile-MacOSX
 		mkfile-Nt
 		mkfile-Plan9
-		/* mkfile-Solaris removed */
 		styxtest.c
 		styxtest0.c
 utils
