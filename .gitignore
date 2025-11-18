@@ -13,6 +13,7 @@ y.output
 y.tab.[ch]
 y.debug
 
+/lib/sh/profile
 /contrib/
 /grid/
 /tmp/
@@ -25,6 +26,7 @@ y.debug
 
 /appl/**/*.dis
 /appl/**/*.sbl
+/dis/**/*.dis
 
 # generated C headers for built-in modules
 /libinterp/cryptmod.h
@@ -72,6 +74,7 @@ appl/acme/acme/bin/
 
 # local and tooling
 .DS_Store
+.tmp/
 core
 .ccache/
 dist/
