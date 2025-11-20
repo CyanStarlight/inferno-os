@@ -31,6 +31,7 @@ static	int	mips4kboot(int, Fhdr*, ExecHdr*);
 static	int	common(int, Fhdr*, ExecHdr*);
 static	int	commonllp64(int, Fhdr*, ExecHdr*);
 static	int	adotout(int, Fhdr*, ExecHdr*);
+static	void	setsym(Fhdr*, long, long, long, vlong);
 static	int	elfdotout(int, Fhdr*, ExecHdr*);
 static	int	armdotout(int, Fhdr*, ExecHdr*);
 static	void	setdata(Fhdr*, uvlong, long, vlong, long);
@@ -49,11 +50,12 @@ typedef struct Exectable{
 	uchar	_magic;			/* _MAGIC() magic */
 	Mach	*mach;			/* Per-machine data */
 	long	hsize;			/* header size */
-			0,
+		ulong   (*swal)(ulong);  /* byte swap routine */
 	int	(*hparse)(int, Fhdr*, ExecHdr*);
 } ExecTable;
 
 extern	Mach	mi386;
+extern	Mach	mamd64;
 extern	Mach	marm;
 extern	Mach	mpower64;
 extern	Mach	mriscv;
@@ -98,7 +100,7 @@ ExecTable exectab[] =
 		sizeof(Exec),
 		beswal,
 		adotout },
-			0,
+	{ 	0,
 		"mips plan 9 boot image",
 		nil,
 		FMIPSB,
