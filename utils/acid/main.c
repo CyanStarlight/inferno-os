@@ -297,7 +297,7 @@ readtext(char *s)
 	Value *v;
 	Symbol sym;
 	ulong length;
-	extern Machdata mipsmach;
+	extern Machdata i386mach;
 
 	if(mtype != 0){
 		symmap = newmap(0, 1);
@@ -314,7 +314,8 @@ readtext(char *s)
 		return;
 	}
 
-	machdata = &mipsmach;
+	/* default to i386 for disassembly and mapping in this branch */
+	machdata = &i386mach;
 
 	if(!crackhdr(text, &fhdr)) {
 		print("can't decode file header\n");

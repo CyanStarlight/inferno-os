@@ -10,7 +10,7 @@
 #define PROFSYM		"_mainp"
 #define	FRAMENAME	".frame"
 
-extern	Machdata	mipsmach;
+/* mipsmach exists only in archived MIPS support; not referenced in this branch */
 
 int	asstype = AMIPS;		/* disassembler type */
 Machdata *machdata;		/* machine-dependent functions */
@@ -165,7 +165,7 @@ _hexify(char *buf, ulong p, int zeros)
 			*buf++ = '0';
 	*buf++ = "0123456789abcdef"[p&0x0f];
 	return buf;
-}
+int	asstype = AI386;		/* disassembler type */
 
 /*
  * These routines assume that if the number is representable

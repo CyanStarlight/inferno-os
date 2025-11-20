@@ -51,15 +51,15 @@ struct	Obj		/* functions to handle each intermediate (.$O) file */
 static Obj	obj[] =
 {			/* functions to identify and parse each type of obj */
 	/*[Obj68020]*/	{0, 0,},
-	/*[ObjSparc]*/	"sparc .k",	_isk, _readk,
-	/*[ObjMips]*/	"mips .v",	_isv, _readv,
+	/*[ObjSparc]*/	{0, 0, 0},
+	/*[ObjMips]*/	{0, 0, 0},
 	/*[Obj386]*/	"386 .8",	_is8, _read8,
 	/*[Obj960]*/	{0, 0,},
 	/*[Obj3210]*/	{0, 0,},
 	/*[ObjMips2]*/	{0, 0,},
 	/*[Obj29000]*/	{0, 0,},
 	/*[ObjArm]*/	"arm .5",	_is5, _read5,
-	/*[ObjPower]*/	"power .q",	_isq, _readq,
+	/*[ObjPower]*/	{0, 0, 0},
 	/*[ObjMips2le]*/	{0, 0,},
 	/*[ObjAlpha]*/	{0, 0,},
 	/*[ObjSparc64]*/	{0, 0,},

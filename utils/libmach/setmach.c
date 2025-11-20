@@ -15,10 +15,11 @@ struct machtab
 	Machdata	*machdata;		/* machine functions */
 };
 
-extern	Mach		mmips, msparc, mi386, mamd64,
-			marm, mmips2be, mmips2le, mpower, mpower64, mriscv, mriscv64;
-extern	Machdata	mipsmach, sparcmach, i386mach,
-			armmach, mipsmach2le, powermach, riscvmach, riscv64mach;
+extern	Mach		mi386, mamd64,
+			marm, mmips2be, mmips2le, mriscv, mriscv64;
+
+extern	Machdata	sparcmach, i386mach,
+			armmach, riscvmach, riscv64mach;
 
 /*
  *	machine selection table.  machines with native disassemblers should
@@ -31,38 +32,38 @@ Machtab	machines[] =
 		FMIPS2LE,
 		0,
 		AMIPS,
-		&mmips2le,
-		&mipsmach2le, 	},
+		0,
+		0, 	},
 	{	"mips",				/*plan 9 mips*/
 		FMIPS,
 		FMIPSB,
 		AMIPS,
-		&mmips,
-		&mipsmach, 	},
+		0,
+		0, 	},
 	{	"mips2",			/*plan 9 mips2*/
 		FMIPS2BE,
 		FMIPSB,
 		AMIPS,
-		&mmips2be,
-		&mipsmach, 	},		/* shares debuggers with native mips */
+		0,
+		0, 	},		/* shares debuggers with native mips */
 	{	"mipsco",			/*native mips - must follow plan 9*/
 		FMIPS,
 		FMIPSB,
 		AMIPSCO,
-		&mmips,
-		&mipsmach,	},
+		0,
+		0,	},
 	{	"sparc",			/*plan 9 sparc */
 		FSPARC,
 		FSPARCB,
 		ASPARC,
-		&msparc,
-		&sparcmach,	},
+		0,
+		0,	},
 	{	"sunsparc",			/*native sparc - must follow plan 9*/
 		FSPARC,
 		FSPARCB,
 		ASUNSPARC,
-		&msparc,
-		&sparcmach,	},
+		0,
+		0,	},
 	{	"386",				/*plan 9 386*/
 		FI386,
 		FI386B,
@@ -91,14 +92,14 @@ Machtab	machines[] =
 		FPOWER,
 		FPOWERB,
 		APOWER,
-		&mpower,
-		&powermach,	},
+		0,
+		0,	},
 	{	"power64",			/*PowerPC*/
 		FPOWER64,
 		FPOWER64B,
 		APOWER64,
-		&mpower64,
-		&powermach,	},
+		0,
+		0,	},
 	{	"riscv",
 		FRISCV,
 		FRISCVB,
@@ -125,7 +126,10 @@ machbytype(int type)
 	for (mp = machines; mp->name; mp++){
 		if (mp->type == type || mp->boottype == type) {
 			asstype = mp->asstype;
-			machdata = mp->machdata;
+			if (mp->machdata)
+				machdata = mp->machdata;
+			if (mp->mach)
+				mach = mp->mach;
 			break;
 		}
 	}
@@ -139,9 +143,10 @@ machbyname(char *name)
 	Machtab *mp;
 
 	if (!name) {
-		asstype = AMIPS;
-		machdata = &mipsmach;
-		mach = &mmips;
+		/* default to the primary supported target */
+		asstype = AI386;
+		machdata = &i386mach;
+		mach = &mi386;
 		return 1;
 	}
 	for (mp = machines; mp->name; mp++){
