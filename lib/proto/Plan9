@@ -15,22 +15,3 @@ Plan9
 			lib9.h
 			u.h
 		lib
-	mips
-		bin
-		include
-			lib9.h
-			u.h
-		lib
-	sparc
-		bin
-		include
-			lib9.h
-			os.h
-			u.h
-		lib
-	power
-		bin
-		include
-			lib9.h
-			u.h
-		lib

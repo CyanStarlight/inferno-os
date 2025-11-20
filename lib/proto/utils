@@ -306,7 +306,6 @@ utils
 		lex.c
 		list.c
 		main.c
-		mips
 		mkfile
 		os-Plan9.c
 		os-Nt.c
@@ -315,7 +314,6 @@ utils
 		print.c
 		proc.c
 		rdebug.c
-		sparc
 		util.c
 	iar
 		Plan9.c

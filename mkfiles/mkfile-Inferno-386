@@ -1,6 +1,6 @@
 TARGMODEL=	Inferno
 TARGSHTYPE=	rc
-CPUS=		arm mips 386 amd64
+CPUS=		arm 386 amd64
 
 O=		8
 OS=		v851ok0q2t6

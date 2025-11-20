@@ -117,8 +117,6 @@ main(int argc, char *argv[])
 		}
 	} else if(rdebug)
 		aout = "/386/bpc";
-	else if(remote)
-		aout = "/mips/bcarrera";
 
 	fmtinstall('x', xfmt);
 	fmtinstall('L', Lfmt);
@@ -578,7 +576,7 @@ mysystem(void)
 
 	cpu = getenv("cputype");
 	if(cpu == 0) {
-		cpu = "mips";
+		cpu = "amd64";
 		print("$cputype not set; assuming %s\n", cpu);
 	}
 	p = getenv("terminal");

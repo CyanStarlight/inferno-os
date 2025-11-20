@@ -6,16 +6,6 @@ FreeBSD
 		bin
 		include
 		lib
-Hp
-	s800
-		bin
-		include
-		lib
-Irix
-	mips
-		bin
-		include
-		lib
 Linux
 	386
 		bin
@@ -25,20 +15,8 @@ Linux
 		bin
 		include
 		lib
-	power
-		bin
-		include
-		lib
-	spim
-		bin
-		include
-		lib
 MacOSX
 	386
-		bin
-		include
-		lib
-	power
 		bin
 		include
 		lib
@@ -49,23 +27,6 @@ Nt
 		lib
 Plan9
 	386
-		bin
-		include
-		lib
-	sparc
-		bin
-		include
-		lib
-	mips
-		bin
-		include
-		lib
-	power
-		bin
-		include
-		lib
-Solaris
-	sparc
 		bin
 		include
 		lib
