@@ -1,0 +1,23 @@
+# Archived platforms and architectures
+
+This directory collects information and archived code for platform and architecture ports that have been removed from the mainline `inferno-modern` build matrix.
+
+If you need to maintain or restore a port, you can check out the corresponding archived directory under `archived/arch/` and follow the build instructions there.
+
+Archival policy
+ - We will keep a complete copy of removed ports under `archived/arch/` (preserving history using `git mv`) so volunteers can maintain them outside the mainline.
+ - The mainline repository will retain only actively supported platforms: Linux, MacOSX, Nt (Windows), and FreeBSD.
+
+How to resurrect an archived port
+1. Create a branch based on `modern`.
+2. Copy files from `archived/arch/<arch>/` into their original locations (or open a PR to re-add the port).
+3. Update `mkconfig` and mkfiles to re-enable the OBJTYPE for that port and test on a machine with the proper toolchain.
+
+Why an architecture gets archived
+- Minimal usage among contributors and users
+- High maintenance cost (toolchain differences, deprecated hardware)
+- To reduce time needed for CI and code review
+
+
+Notes
+- Not all archived files are guaranteed to be buildable on a modern host without manual changes — the archive is a snapshot for volunteer maintainers only.
