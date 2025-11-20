@@ -1598,7 +1598,7 @@ tkdirty(Tk *tk)
 }
 
 static int
-qcmdcmp(void *a, void *b)
+qcmdcmp(const void *a, const void *b)
 {
 	/* match project qsort prototype: int (*)(void*, void*) */
 	return strcmp(((TkCmdtab*)a)->name, ((TkCmdtab*)b)->name);
