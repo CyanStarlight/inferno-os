@@ -25,16 +25,15 @@ typedef struct {
 	u32int dummy;			/* padding to ensure extra u32int */
 } ExecHdr;
 
-static	int	nextboot(int, Fhdr*, ExecHdr*);
 static	int	sparcboot(int, Fhdr*, ExecHdr*);
 static	int	mipsboot(int, Fhdr*, ExecHdr*);
 static	int	mips4kboot(int, Fhdr*, ExecHdr*);
 static	int	common(int, Fhdr*, ExecHdr*);
 static	int	commonllp64(int, Fhdr*, ExecHdr*);
 static	int	adotout(int, Fhdr*, ExecHdr*);
+static	void	setsym(Fhdr*, long, long, long, vlong);
 static	int	elfdotout(int, Fhdr*, ExecHdr*);
 static	int	armdotout(int, Fhdr*, ExecHdr*);
-static	void	setsym(Fhdr*, long, long, long, vlong);
 static	void	setdata(Fhdr*, uvlong, long, vlong, long);
 static	void	settext(Fhdr*, uvlong, uvlong, long, vlong);
 static	void	hswal(void*, int, ulong(*)(ulong));
@@ -43,7 +42,6 @@ static	uvlong	_round(uvlong, ulong);
 /*
  *	definition of per-executable file type structures
  */
-
 typedef struct Exectable{
 	long	magic;			/* big-endian magic number of file */
 	char	*name;			/* executable identifier */
@@ -52,66 +50,62 @@ typedef struct Exectable{
 	uchar	_magic;			/* _MAGIC() magic */
 	Mach	*mach;			/* Per-machine data */
 	long	hsize;			/* header size */
-	ulong	(*swal)(ulong);		/* beswal or leswal */
+		ulong   (*swal)(ulong);  /* byte swap routine */
 	int	(*hparse)(int, Fhdr*, ExecHdr*);
 } ExecTable;
 
-extern	Mach	mmips;
-extern	Mach	mmips2le;
-extern	Mach	mmips2be;
-extern	Mach	msparc;
 extern	Mach	mi386;
 extern	Mach	mamd64;
 extern	Mach	marm;
-extern	Mach	mpower;
 extern	Mach	mpower64;
 extern	Mach	mriscv;
 extern	Mach	mriscv64;
 
+
 ExecTable exectab[] =
 {
-	{ V_MAGIC,			/* Mips v.out */
+	{ V_MAGIC,
 		"mips plan 9 executable BE",
 		"mips plan 9 dlm BE",
 		FMIPS,
 		1,
-		&mmips,
+		0,
 		sizeof(Exec),
 		beswal,
 		adotout },
-	{ P_MAGIC,			/* Mips 0.out (r3k le) */
+	{ P_MAGIC,
 		"mips plan 9 executable LE",
 		"mips plan 9 dlm LE",
 		FMIPSLE,
 		1,
-		&mmips,
+		0,
 		sizeof(Exec),
 		beswal,
 		adotout },
-	{ M_MAGIC,			/* Mips 4.out */
+	{ M_MAGIC,
 		"mips 4k plan 9 executable BE",
 		"mips 4k plan 9 dlm BE",
 		FMIPS2BE,
 		1,
-		&mmips2be,
+		0,
 		sizeof(Exec),
 		beswal,
 		adotout },
-	{ N_MAGIC,			/* Mips 0.out */
+	{ N_MAGIC,
 		"mips 4k plan 9 executable LE",
 		"mips 4k plan 9 dlm LE",
 		FMIPS2LE,
 		1,
-		&mmips2le,
+		0,
 		sizeof(Exec),
 		beswal,
 		adotout },
-	{ 0x160<<16,			/* Mips boot image */
+	{ 	0,
 		"mips plan 9 boot image",
 		nil,
 		FMIPSB,
 		0,
-		&mmips,
+		0,
 		sizeof(struct mipsexec),
 		beswal,
 		mipsboot },
@@ -120,7 +114,7 @@ ExecTable exectab[] =
 		nil,
 		FMIPSB,
 		0,
-		&mmips2be,
+		0,
 		sizeof(struct mips4kexec),
 		beswal,
 		mips4kboot },
@@ -129,7 +123,7 @@ ExecTable exectab[] =
 		"sparc plan 9 dlm",
 		FSPARC,
 		1,
-		&msparc,
+		0,
 		sizeof(Exec),
 		beswal,
 		adotout },
@@ -138,7 +132,7 @@ ExecTable exectab[] =
 		nil,
 		FSPARCB,
 		0,
-		&msparc,
+		0,
 		sizeof(struct sparcexec),
 		beswal,
 		sparcboot },
@@ -165,7 +159,7 @@ ExecTable exectab[] =
 		"power plan 9 dlm",
 		FPOWER,
 		1,
-		&mpower,
+		0,
 		sizeof(Exec),
 		beswal,
 		common },
@@ -174,7 +168,7 @@ ExecTable exectab[] =
 		"power64 plan 9 dlm",
 		FPOWER64,
 		1,
-		&mpower64,
+		0,
 		sizeof(Exec)+8,
 		nil,
 		commonllp64 },
@@ -300,7 +294,8 @@ crackhdr(int fd, Fhdr *fp)
 		fp->_magic = mp->_magic;
 		fp->magic = magic;
 
-		mach = mp->mach;
+		if (mp->mach)
+			mach = mp->mach;
 		if(mp->swal != nil)
 			hswal(&d, sizeof(d.e)/sizeof(ulong), mp->swal);
 		ret = mp->hparse(fd, fp, &d);
@@ -589,13 +584,14 @@ elfdotout(int fd, Fhdr *fp, ExecHdr *hp)
 		fp->type = FI386;
 		break;
 	case MIPS:
-		mach = &mmips;
+		/* MIPS support removed in this branch; keep header decoding, but
+		 * leave machine pointer at default to avoid undefined references. */
 		fp->type = FMIPS;
 		break;
 	case SPARC64:
 		return 0;
 	case POWER:
-		mach = &mpower;
+		/* Power support removed in this branch; leave machine at default. */
 		fp->type = FPOWER;
 		break;
 	case AMD64:

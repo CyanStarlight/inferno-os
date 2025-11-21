@@ -9,31 +9,6 @@ Inferno
 		include
 			*
 		lib
-	mips
-		bin
-		include
-			*
-		lib
-	power
-		bin
-		include
-			*
-		lib
-	sparc
-		bin
-		include
-			*
-		lib
-	spim
-		bin
-		include
-			*
-		lib
-	thumb
-		bin
-		include
-			*
-		lib
 include
 	flate.h
 	kern.h
@@ -72,19 +47,9 @@ libkern
 	frexp-386.c
 	frexp-68000.c
 	frexp-arm.c
-	frexp-mips.c
-	frexp-power.c
-	frexp-sparc.c
-	frexp-spim.c
-	frexp-thumb.c
 	getfcr-386.s
 	getfcr-68000.s
 	getfcr-arm.s
-	getfcr-mips.s
-	getfcr-power.s
-	getfcr-sparc.s
-	getfcr-spim.s
-	getfcr-thumb.s
 	getfields.c
 	log.c
 	memccpy-power.s
@@ -96,38 +61,18 @@ libkern
 	memmove-386.s
 	memmove-68000.s
 	memmove-arm.s
-	memmove-mips.s
-	memmove-power.s
-	memmove-spim.s
-	memmove-sparc.s
-	memmove-thumb.s
 	memset-386.s
 	memset-68000.s
 	memset-arm.s
-	memset-mips.s
-	memset-power.s
-	memset-sparc.s
-	memset-spim.s
-	memset-thumb.s
 	memset.c
 	mkfile
 	mkfile-386
 	mkfile-68000
-	mkfile-arm
-	mkfile-mips
-	mkfile-power
-	mkfile-sparc
-	mkfile-spim
 	mkfile-thumb
 	muldiv-68000.s
 	nan-386.c
 	nan-68000.c
 	nan-arm.c
-	nan-mips.c
-	nan-power.c
-	nan-spim.c
-	nan-sparc.c
-	nan-thumb.c
 	netmkaddr.c
 	pow.c
 	pow10.c
@@ -143,12 +88,6 @@ libkern
 	strchr-386.s
 	strchr-68000.s
 	strchr-arm.s
-	strchr-mips.c
-	strchr-mips.s
-	strchr-power.s
-	strchr-sparc.s
-	strchr-spim.c
-	strchr-thumb.s
 	strchr.c
 	strcmp-power.s
 	strcmp.c
@@ -178,19 +117,9 @@ libkern
 	utfrune.c
 	vlop-386.s
 	vlop-arm.s
-	vlop-mips.s
-	vlop-power.s
-	vlop-sparc.s
-	vlop-spim.s
-	vlop-thumb.s
 	vlrt-386.c
 	vlrt-68000.c
 	vlrt-arm.c
-	vlrt-mips.c
-	vlrt-power.c
-	vlrt-sparc.c
-	vlrt-spim.c
-	vlrt-thumb.c
 	vseprint.c
 	vsmprint.c
 	vsnprint.c

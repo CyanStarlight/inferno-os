@@ -116,8 +116,6 @@ loader.$O:	loadermod.h
 freetype.$O:	freetypemod.h $ROOT/include/freetype.h
 math.$O:	$ROOT/include/mathi.h
 
-das-spim.c:N:	das-mips.c
-comp-spim.c:N:	comp-mips.c
 
 # optab.h:	$ROOT/include/isa.h mkoptab
 #	$SHELLNAME mkoptab > $target

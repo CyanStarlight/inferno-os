@@ -117,8 +117,6 @@ main(int argc, char *argv[])
 		}
 	} else if(rdebug)
 		aout = "/386/bpc";
-	else if(remote)
-		aout = "/mips/bcarrera";
 
 	fmtinstall('x', xfmt);
 	fmtinstall('L', Lfmt);
@@ -299,7 +297,7 @@ readtext(char *s)
 	Value *v;
 	Symbol sym;
 	ulong length;
-	extern Machdata mipsmach;
+	extern Machdata i386mach;
 
 	if(mtype != 0){
 		symmap = newmap(0, 1);
@@ -316,7 +314,8 @@ readtext(char *s)
 		return;
 	}
 
-	machdata = &mipsmach;
+	/* default to i386 for disassembly and mapping in this branch */
+	machdata = &i386mach;
 
 	if(!crackhdr(text, &fhdr)) {
 		print("can't decode file header\n");
@@ -578,7 +577,7 @@ mysystem(void)
 
 	cpu = getenv("cputype");
 	if(cpu == 0) {
-		cpu = "mips";
+		cpu = "amd64";
 		print("$cputype not set; assuming %s\n", cpu);
 	}
 	p = getenv("terminal");

@@ -282,7 +282,7 @@ extern	double	modf(double, double*);
 extern	double	pow10(int);
 extern	vlong	strtoll(const char*, char**, int);
 #define	qsort	infqsort
-extern	void	qsort(void*, long, long, int (*)(void*, void*));
+extern void qsort(void *, long, long, int (*)(const void *, const void *));
 extern	uvlong	strtoull(const char*, char**, int);
 extern	void	sysfatal(char*, ...);
 extern	int	dec64(uchar*, int, char*, int);

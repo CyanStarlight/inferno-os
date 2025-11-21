@@ -6,15 +6,9 @@
 #pragma	lib	"libmach.a"
 /*
  *	Supported architectures:
- *		mips,
- *		68020,
  *		i386,
  *		amd64,
- *		sparc,
- *		mips2 (R4000)
  *		arm
- *		powerpc,
- *		powerpc64
  *		arm64
  *		riscv
  *		riscv64

@@ -61,8 +61,6 @@ tmp/*
 
 # Only Linux 386 files are needed for Docker
 arm/*
-power/*
-spim/*
 MacOSX/*
 Nt/*
 FreeBSD/*

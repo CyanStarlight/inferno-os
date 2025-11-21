@@ -1,6 +1,6 @@
 TARGMODEL=	Plan9
 TARGSHTYPE=	rc
-CPUS=		386 sparc mips power amd64
+CPUS=		386 amd64
 
 O=		8
 OS=		v851ok0q2t6

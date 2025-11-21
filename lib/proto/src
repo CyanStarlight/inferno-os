@@ -349,24 +349,12 @@ libinterp
 	comp-386.c
 	comp-68020.c
 	comp-arm.c
-	# comp-mips.c arch-specific (moved to archived/arch/mips)
-	# comp-power.c arch-specific (moved to archived/arch/power)
-	# comp-s800.c arch-specific (moved to archived/arch/s800)
-	# comp-sparc.c arch-specific (moved to archived/arch/sparc)
-	# comp-spim.c arch-specific (moved to archived/arch/spim)
-	comp-thumb.c
 	conv.c
 	das-386.c
 	das-68000.c
 	das-68020.c
 	das-arm.c
-	# das-mips.c arch-specific (moved to archived/arch/mips)
-	# das-power.c arch-specific (moved to archived/arch/power)
-	# das-s800.c arch-specific (moved to archived/arch/s800)
-	# das-sparc.c arch-specific (moved to archived/arch/sparc)
 	das-stub.c
-	das-spim.c
-	das-thumb.c
 	dec.c
 	decgen.c
 	dlm-Inferno.c
@@ -536,19 +524,6 @@ libmp
 		mpvecdigmuladd.s
 		mpvecdigmulsub.s
 		mpvecsub.s
-	Inferno-mips
-		mkfile
-		mpdigdiv.s
-		mpvecadd.s
-		mpvecdigmuladd.s
-		mpvecdigmulsub.s
-		mpvecsub.s
-	Inferno-power
-		mkfile
-		mpvecadd.s
-		mpvecdigmuladd.s
-		mpvecdigmulsub.s
-		mpvecsub.s
 	Plan9-386
 		mkfile
 		mpdigdiv.s
@@ -559,19 +534,6 @@ libmp
 	Plan9-amd64
 		mkfile
 		mpdigdiv.s
-		mpvecadd.s
-		mpvecdigmuladd.s
-		mpvecdigmulsub.s
-		mpvecsub.s
-	Plan9-mips
-		mkfile
-		mpdigdiv.s
-		mpvecadd.s
-		mpvecdigmuladd.s
-		mpvecdigmulsub.s
-		mpvecsub.s
-	Plan9-power
-		mkfile
 		mpvecadd.s
 		mpvecdigmuladd.s
 		mpvecdigmulsub.s
@@ -633,18 +595,6 @@ libprefab
 libsec
 	NOTICE
 	Inferno-386
-		md5block.s
-		mkfile
-		sha1block.s
-	Inferno-mips
-		md5block.s
-		mkfile
-		sha1block.s
-	Plan9-386
-		md5block.s
-		mkfile
-		sha1block.s
-	Plan9-mips
 		md5block.s
 		mkfile
 		sha1block.s

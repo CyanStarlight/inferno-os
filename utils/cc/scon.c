@@ -309,13 +309,13 @@ acom(Node *n)
 }
 
 int
-acomcmp1(void *a1, void *a2)
+acomcmp1(const void *a1, const void *a2)
 {
 	vlong c1, c2;
-	Term *t1, *t2;
+	const Term *t1, *t2;
 
-	t1 = (Term*)a1;
-	t2 = (Term*)a2;
+	t1 = (const Term*)a1;
+	t2 = (const Term*)a2;
 	c1 = t1->mult;
 	if(c1 < 0)
 		c1 = -c1;
@@ -340,13 +340,13 @@ acomcmp1(void *a1, void *a2)
 }
 
 int
-acomcmp2(void *a1, void *a2)
+acomcmp2(const void *a1, const void *a2)
 {
 	vlong c1, c2;
-	Term *t1, *t2;
+	const Term *t1, *t2;
 
-	t1 = (Term*)a1;
-	t2 = (Term*)a2;
+	t1 = (const Term*)a1;
+	t2 = (const Term*)a2;
 	c1 = t1->mult;
 	c2 = t2->mult;
 	if(c1 > c2)
